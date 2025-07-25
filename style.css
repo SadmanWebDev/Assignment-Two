@@ -3,10 +3,9 @@
 .noto-serif{
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  /* font-weight: weight; */
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .main-bg{
@@ -103,7 +102,7 @@
 
 .plant-header{
     justify-content: center;
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 500;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -121,6 +120,12 @@
     border-style: none;
     font-weight: 600;
     width: 100%;
+    cursor: pointer;
+}
+.plant-button:hover{
+    box-shadow: 0 0 15px rgb(233, 90, 8), 0 0 30px rgb(233, 90, 8);
+    transform: scale(1.05);
+    border-radius: 10px;
 }
 /* Flower & Plants Lover */
 
@@ -135,8 +140,8 @@
     margin-bottom: 20px;
 }
 .trusted-badge{
-    width: 286px;
-    height: 286px;
+    width: 17.875rem;
+    height: 17.875rem;
     position: absolute;
     margin-top: -120px;
     margin-left: 350px;
@@ -151,14 +156,12 @@
 }
 .deals-background{
     gap: 30px;
-    max-height: 423px;
+    max-height: 26.4375rem;
 }
 .bg-bloom{
     background-image: url("assets/deal-bloom.png");
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4)); */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* width: 22.88rem;
-    height: 212.87rem; */
+    /* width: 22.88rem; */
+    /* height: 212.87rem; */
     width: 366.22px;
     height: 206px;
     background-repeat: no-repeat;
@@ -172,7 +175,6 @@
 
 .bg-zabo{
     background-image: url("assets/deal-zabo.png");
-    background: rgb(200, 200, 200), url(assets/deal-zabo.png);
     /* width: 22.88rem;
     height: 212.87rem; */
     /* width: 366.22px;
@@ -190,9 +192,6 @@
 
 .bg-ana{
     background-image: url("assets/deal-ana.png");
-
-    /* background: rgb(200, 200, 200), url(assets/deal-ana.png) */
-
     /* width: 22.88rem;
     height: 212.87rem; */
     height: 206px;
@@ -203,6 +202,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.ana-bg-color{
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('assets/deal-ana.png') no-repeat center center / cover;
+}
+.zabo-bg-color{
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('assets/deal-zabo.png') no-repeat center center / cover;
+}
+.bloom-bg-color{
+background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('assets/deal-bloom.png') no-repeat center center / cover; 
 }
 .deal-header{
     color: white;
@@ -215,12 +229,17 @@
     font-weight: 700;
 }
 .deal-link-zabo{
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
 }
-/* .background: rgba(0, 0, 0, 0.4), url(); */
+.deal-link:hover{
+    color: white; /* Keep font white */
+    text-shadow: 0 0 10px rgba(101, 198, 96, 0.333),
+                 0 0 20px rgba(101, 198, 96, 0.333),
+                 0 0 40px rgba(101, 198, 96, 0.333);
+}
 
-/* Join the colorful Bunch */
+/* Join the colorful Bunch style */
 .join-bunch{
     background-image: url(assets/news-letter-bg.png);
     background-repeat: no-repeat;
@@ -234,7 +253,7 @@
 }
 
 .join-header{
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
 }
 
@@ -246,7 +265,7 @@
     /* justify-content: space-evenly; */
 }
 .form-button{
-    padding: 26px 50px 26px 50px;
+    padding: 20px 50px;
     /* height: 50px; */
     background-color: rgb(233, 90, 8);
     border-style: none;
@@ -282,28 +301,27 @@ footer a{
 
 
 
-
-
-
-
-
 @media screen and (max-width: 576px) {
     /* header section */
     .nav-link1, .nav-link2, .nav-link3{
         display: none;
     }
+    .nav-link4{
+        margin-top: 25px;
+    }
     .banner{
         max-width: 100%;
-        display: grid;
-        grid-template-areas: 
-        "banner-img"
-        "banner-content";
+        display: flex;
+        flex-direction: column-reverse;
         /* flex-direction: column; */
        grid-template-columns: repeat(1, 1fr)               
     }
     .banner-img, .banner-content{
         max-width: 100%;
     }
+    /* .banner-img{
+        display: flex; */
+    
     /* our plants */
     .plants-lily{
         display: grid;
@@ -312,32 +330,89 @@ footer a{
     .plants-content{
         justify-content: center;
     }
-    /* Flower & Plants Lover */
+/* Flower & Plants Lover */
     .plants-lover{
         display: grid;
         /* grid-template-columns: repeat(1, 1fr); */
-    }
-    /* Latest Deals responsive */
+        }
+        .trusted-badge{
+            display: none;
+        }
+/* Latest Deals responsive */
     .deals-background{
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        /* gap: 30px; */
+    }
+    .deals-background{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .bg-zabo{
-        height: 206px;
+        /* height: 206px;
         width: 366.22px;
-        
+        width: 100%; */
+        height: 177px;
+        width: 361px;
+        /* margin-top: 20px; */
+        margin-bottom: 40px;
     }
     .deal-header-zabo{
+        margin-bottom: 19px;
+        margin-top: 60px;
         font-size: 20px;
         font-weight: 700;
     }
     .deal-link-zabo{
         font-weight: 400;
-        font-style: 16px;
+        font-size: 16px;
+        margin-bottom: 50px;
     }
-    
+/* footer responsive */
+    .join-bunch{
+        height: 275px;
+        margin-top: 100px;
+    }
+    #email{
+        width: 200px;
+        height: 30px;
+    }
+    .form-button{
+        /* padding-left: ; */
+        padding: 0 10px;
+    }
+    .form-content{
+        display: flex;
+    }
+    .join-header{
+        font-size: 20px;
+    }
+    .main-footer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer-logo{
+        width: 180px;
+    }
+    .footer-links{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer-socials{
+        display: flex;
+        width: 40px;
+        margin-top: 20px;
+    }
+    body img{
+        width: 100%;
+    }
+    .bg-bloom .bg-ana{
+        width: 100%;
+    }
 }
+    
 
 
 
